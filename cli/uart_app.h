@@ -36,7 +36,7 @@
 void UARTInit(void);
 
 void UARTPrint(char *buf); 
-char GetUARTData(void);
+int GetUARTData(uint8_t *buf);
 
 #endif // SGP_APP_H
 //****************************************************************************

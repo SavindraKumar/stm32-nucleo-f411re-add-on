@@ -107,7 +107,7 @@ uint8_t cli_ProcessCmd(const char *pcData, uint8_t ucBytesRec, char *pcResult)
         bIsCmdRec = RxHandler(pcData, ucBytesRec);
     }
 
-    if ( (true == bIsCmdRec) && (strlen(m_cCmdBuf) > 0) )
+    if ( (true == bIsCmdRec) && (strlen(m_cCmdBuf) >= 0) )
     {
         ucParamCount = GetParameters(m_cCmdBuf, strlen(m_cCmdBuf), DELIMITER, pcParamsBuf);
         usNumOfCmds  = sizeof(m_CliCmdListBuf) / sizeof(m_CliCmdListBuf[0]);

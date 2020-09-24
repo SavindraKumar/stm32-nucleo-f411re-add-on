@@ -70,13 +70,18 @@ void UARTPrint(char *buf)
     memset(buf, 0, strlen(buf) );
 }
 
-char GetUARTData(void)
+int GetUARTData(uint8_t *buf)
 {
-    char buf = 0;
-
-    HAL_UART_Receive(&huart2, (uint8_t*)buf, 1, 10);
-
-    return buf;
+    HAL_StatusTypeDef status = HAL_UART_Receive(&huart2, buf, 1, 10);
+    
+    if(HAL_OK == status)
+    {
+        return 1;
+    }
+    else
+    {
+        return -1;
+    }
 }
 
 void HAL_MspInit(void)
