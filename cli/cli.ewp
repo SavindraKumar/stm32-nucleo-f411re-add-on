@@ -2119,6 +2119,12 @@
     <group>
         <name>application</name>
         <file>
+            <name>$PROJ_DIR$\app.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\cli.c</name>
+        </file>
+        <file>
             <name>$PROJ_DIR$\..\common\init.c</name>
         </file>
         <file>
