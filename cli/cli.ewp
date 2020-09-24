@@ -2133,6 +2133,9 @@
         <file>
             <name>$PROJ_DIR$\stm32f4xx_it.c</name>
         </file>
+        <file>
+            <name>$PROJ_DIR$\uart_app.c</name>
+        </file>
     </group>
     <group>
         <name>drivers</name>
