@@ -70,6 +70,15 @@ void UARTPrint(char *buf)
     memset(buf, 0, strlen(buf) );
 }
 
+char GetUARTData(void)
+{
+    char buf = 0;
+
+    HAL_UART_Receive(&huart2, (uint8_t*)buf, 1, 10);
+
+    return buf;
+}
+
 void HAL_MspInit(void)
 {
   __HAL_RCC_SYSCFG_CLK_ENABLE();
