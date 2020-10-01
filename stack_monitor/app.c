@@ -62,6 +62,16 @@ uint8_t app_ShowInfo(const char **ppcParams,
     return true;
 }//end AppShowInfo
 
+
+uint8_t app_GetFreeStack(const char **ppcParams,
+                         uint8_t ucParamCount,
+                         char *pcResult)
+{
+    sprintf(pcResult, "\r\nFree stack size = %u bytes\r\n", 12);  
+    
+    return true;
+}//end app_GetFreeStack
+
 //****************************************************************************
 //                           L O C A L  F U N C T I O N S
 //****************************************************************************

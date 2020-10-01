@@ -79,6 +79,7 @@ static const CliCmdList_t m_CliCmdListBuf[] =
 {
     { "help", Help, "Displays list of supported commands", 0 },
     { "info", app_ShowInfo, "Shows device info", 0 },
+    { "stack", app_GetFreeStack, "Display free stack", 0}
 };
 
 static char    m_cCmdBuf[CMD_SIZE_IN_BYTES];

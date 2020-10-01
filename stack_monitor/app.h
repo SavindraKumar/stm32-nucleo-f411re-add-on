@@ -41,6 +41,19 @@ uint8_t app_ShowInfo (const char **ppcParams,
                       char *pcResult);
 
 
+//
+//! @brief Display Free stack
+//! @param[in]  ppcParams    Pointer to parameters string
+//! @param[in]  ucParamCount Number of Parameters
+//! @param[out] pcResult     Pointer to result buffer
+//! @return     uint8_t      true -Command executed successfully
+//!                          false-Command not executed
+//
+uint8_t app_GetFreeStack(const char **ppcParams,
+                         uint8_t ucParamCount,
+                         char *pcResult); 
+
+
 #endif // _APP_H
 //****************************************************************************
 //                             End of file
