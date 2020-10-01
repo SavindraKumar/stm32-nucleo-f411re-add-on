@@ -13,12 +13,17 @@
 //                           Includes
 //****************************************************************************/
 //standard header files
+#include <stdbool.h>
+#include <stdint.h>
 //user defined header files
 #include "init.h"
+#include "cli.h"
+#include "uart_app.h"
 
 //****************************************************************************/
 //                           Defines and typedefs
 //****************************************************************************/
+#define TX_BUF_SIZE     256
 
 //****************************************************************************/
 //                           Private Functions
@@ -38,15 +43,34 @@
 //****************************************************************************/
 int main()
 {
+    char txBuf[TX_BUF_SIZE];
+
     Init();
+    UARTInit();
+    cli_Init(txBuf);
+    UARTPrint(txBuf);
 
     //loop forever
     while (1)
     {
+       bool bIsCmdProcess = false;
+       uint8_t dataByte = 0;
+       
+       int bytes_rec = GetUARTData(&dataByte);
 
+        if (bytes_rec > 0)
+        {
+            bIsCmdProcess = cli_ProcessCmd( (char const*)&dataByte, bytes_rec, txBuf);
+
+            if (bIsCmdProcess)
+            {
+                UARTPrint(txBuf);
+                cli_ResetBuffer(txBuf);
+                UARTPrint(txBuf);
+            }//end if
+        }//end if       
     }
-
-
+   
 }//end main
 
 

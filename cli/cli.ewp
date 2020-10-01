@@ -2119,6 +2119,12 @@
     <group>
         <name>application</name>
         <file>
+            <name>$PROJ_DIR$\app.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\cli.c</name>
+        </file>
+        <file>
             <name>$PROJ_DIR$\..\common\init.c</name>
         </file>
         <file>
@@ -2126,6 +2132,9 @@
         </file>
         <file>
             <name>$PROJ_DIR$\stm32f4xx_it.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\uart_app.c</name>
         </file>
     </group>
     <group>
@@ -2148,6 +2157,9 @@
                 <name>$PROJ_DIR$\..\drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_cortex.c</name>
             </file>
             <file>
+                <name>$PROJ_DIR$\..\drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_gpio.c</name>
+            </file>
+            <file>
                 <name>$PROJ_DIR$\..\drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr.c</name>
             </file>
             <file>
@@ -2155,6 +2167,9 @@
             </file>
             <file>
                 <name>$PROJ_DIR$\..\drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc_ex.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\..\drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_uart.c</name>
             </file>
         </group>
     </group>
