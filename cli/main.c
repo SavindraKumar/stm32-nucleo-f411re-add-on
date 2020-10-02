@@ -19,6 +19,7 @@
 #include "init.h"
 #include "cli.h"
 #include "uart_app.h"
+#include "stack_monitoring.h"
 
 //****************************************************************************/
 //                           Defines and typedefs
@@ -45,6 +46,7 @@ int main()
 {
     char txBuf[TX_BUF_SIZE];
 
+    StackMonitoringInit();
     Init();
     UARTInit();
     cli_Init(txBuf);

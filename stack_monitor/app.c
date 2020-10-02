@@ -20,6 +20,7 @@
 #include <stdbool.h>
 //user defined header files
 #include "app.h"
+#include "stack_monitor.h"
 
 //****************************************************************************
 //                           Defines and typedefs
@@ -67,7 +68,17 @@ uint8_t app_GetFreeStack(const char **ppcParams,
                          uint8_t ucParamCount,
                          char *pcResult)
 {
-    sprintf(pcResult, "\r\nFree stack size = %u bytes\r\n", 12);  
+    uint16_t usLengthInBytes = 0;
+    uint32_t total_stack_size = TotalStackSize();
+    uint32_t free_stack_size  = FreeStackSize();
+
+    usLengthInBytes += sprintf(pcResult, 
+                               "\r\nTotal stack size = %u bytes\r\n",
+                               total_stack_size);
+ 
+    usLengthInBytes += sprintf(pcResult + usLengthInBytes, 
+                               "Free stack size = %u bytes\r\n",
+                               free_stack_size);    
     
     return true;
 }//end app_GetFreeStack
