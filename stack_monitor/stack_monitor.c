@@ -32,8 +32,8 @@
 //                           external variables
 //*****************************************************************************
 //Symbols which are resolved at linking time 
-extern uint32_t* CSTACK$$Limit;
-extern uint32_t* CSTACK$$Base;
+extern uint32_t CSTACK$$Limit;
+extern uint32_t CSTACK$$Base;
 
 //*****************************************************************************
 //                           Private variables
