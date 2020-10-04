@@ -3,5 +3,8 @@
     <project>
         <path>$WS_DIR$\cli\cli.ewp</path>
     </project>
+    <project>
+        <path>$WS_DIR$\stack_monitor\stack_monitor.ewp</path>
+    </project>
     <batchBuild />
 </workspace>
